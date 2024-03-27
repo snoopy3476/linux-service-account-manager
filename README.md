@@ -1,4 +1,4 @@
-# Linux Service Account Manager (LSAM)
+# Linux Service Account Manager (SAMAN)
 
 
 ## Description
@@ -15,19 +15,19 @@ Users created by this script will have:
 ## Usage
 
 ```
-usage: lsam <MODE> [args...]
+usage: saman <MODE> [args...]
 
   <MODE>
-   - add:     create a new LSAM service account
-                 $ lsam add <account-name> [port-1] [port-2] ...
-   - ls:      list all LSAM service accounts
-                 $ lsam ls
-   - detail:  print details of an LSAM service account
-                 $ lsam detail <account-name>
-   - rm:      remove an LSAM service account
-                 $ lsam rm <account-name> [force]
+   - add:     create a new SAMAN service account
+                 $ saman add <account-name> [port-1] [port-2] ...
+   - ls:      list all SAMAN service accounts
+                 $ saman ls
+   - detail:  print details of an SAMAN service account
+                 $ saman detail <account-name>
+   - rm:      remove an SAMAN service account
+                 $ saman rm <account-name> [force]
    - help:    print help message
-                 $ lsam help
+                 $ saman help
 ```
 
 
@@ -35,20 +35,20 @@ usage: lsam <MODE> [args...]
 Check below to utilize the script conveniently (Optional).
 
 - To print manual for this command on ssh login:  
-  1. Place `lsam` script to `$PATH` (or just place the script in the directory `~/bin` if your shell supports it by default),  
+  1. Place `saman` script to `$PATH` (or just place the script in the directory `~/bin` if your shell supports it by default),  
   2. Then add below to the file `~/.ssh/rc`:
      ```shell
      printf "\n
-     ================[ LSAM service account list ]===============
+     ===============[ SAMAN service account list ]===============
      %s
      ============================================================
      
      
-     =======================[ LSAM usage ]=======================
-     * Create or manage service accounts with the command 'lsam'.
+     =======================[ SAMAN usage ]======================
+     * Create or manage service accounts with the command 'saman'
      - %s
      ============================================================
      
-     \n" "$(lsam ls | tr '\n' '\t')" "$(lsam help)"
+     \n" "$(saman ls | tr '\n' '\t')" "$(saman help)"
      ```
      ![ssh login help message](readme-asset/ssh-login-help-msg.png)
